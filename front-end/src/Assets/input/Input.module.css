@@ -1,0 +1,10 @@
+.inputAsset {
+  border: none;
+  height: 2em;
+  width: 32em;
+  background-color: var(--color-grey-background);
+  padding: 0.5em;
+  border-radius: 28px;
+  margin: 0 var(--space-4) 0 var(--space-4);
+  outline: none;
+}

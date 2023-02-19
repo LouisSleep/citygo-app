@@ -1,0 +1,21 @@
+.suggestionSection {
+  margin-top: var(--space-56);
+}
+.h5Home {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semi-bold);
+}
+.cardSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+}
+.cityCard {
+  width: 14em;
+  margin: 2%;
+  border-radius: 28px;
+}
+
+.cityCardContent {
+  padding: 2.5%;
+  height: auto;
+}

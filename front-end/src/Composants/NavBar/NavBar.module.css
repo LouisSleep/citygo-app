@@ -1,0 +1,36 @@
+.headerNav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.logoHeader {
+  width: 2.15em;
+  height: 1.85em;
+}
+.titleHeader {
+  font-family: var(--font-family-logo);
+  font-weight: var(--font-weight-medium);
+}
+
+.logoHeader,
+.titleHeader {
+  margin: 1%;
+}
+.headerButton {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: var(--font-size-body);
+}
+.navbarSection {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: row;
+}
+
+.navButton,
+.headerButton {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

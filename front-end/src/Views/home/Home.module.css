@@ -1,0 +1,29 @@
+.homeSection {
+  margin-top: var(--space-32);
+}
+.searchSection {
+  display: flex;
+}
+.topHomeSection {
+  background-image: url("../../Assets/img/colorfulimg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4%;
+  border-radius: 28px;
+  display: flex;
+  justify-content: start;
+}
+.titleSection {
+  background-color: var(--color-white-background);
+  border-radius: 28px;
+  padding: 2%;
+}
+.titleSection .h1Home {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-blue-primary);
+}
+.titleSection .h5Home {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-thin);
+}
