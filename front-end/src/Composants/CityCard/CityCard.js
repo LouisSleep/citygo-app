@@ -31,3 +31,5 @@ export default function CityCard(props) {
     </div>
   );
 }
+
+;
