@@ -12,7 +12,7 @@ class CitySeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\City::factory(10)->create();
+        \App\Models\City::factory(40)->create();
         // \App\Models\City::factory()->create([
         //     'cityName' => 'Paris',
         //     'country' => 'France',

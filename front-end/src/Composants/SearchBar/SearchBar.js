@@ -11,14 +11,14 @@ export default function SearchBar(props) {
         <h4>Where do you want to go ?</h4>
       </div> */}
       <div className={style.inputSection}>
-        {/* <div className={style.validateButton}>
-          <img src={Search}></img>
-        </div> */}
         <Input
           type="text"
           placeHolder="Find your way..."
           onChangeFunction={props.inputSearch}
         />
+        {/* <div className={style.validateButton}>
+          <img src={Search}></img>
+        </div> */}
       </div>
     </form>
   );

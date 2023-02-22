@@ -1,5 +1,8 @@
 .suggestionSection {
   margin-top: var(--space-56);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .h5Home {
   font-size: var(--font-size-body);
@@ -7,15 +10,48 @@
 }
 .cardSection {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .cityCard {
-  width: 14em;
   margin: 2%;
   border-radius: 28px;
+  background-color: transparent;
 }
 
-.cityCardContent {
+.cityCard .cityCardContent {
   padding: 2.5%;
   height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cityCardContent img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.suggestCard {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  margin: 2%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.CTAButton{
+  display: flex;
+  justify-content: center;
+}
+
+.CTAButtonSeeAllCity {
+  border: none;
+  background-color: var(--color-blue-secondary);
+  color: var(--color-ink-white);
+  border-radius: 6px;
+  margin: 6%;
+  padding: 1%;
+  cursor: pointer;
+  grid-column: 3;
 }

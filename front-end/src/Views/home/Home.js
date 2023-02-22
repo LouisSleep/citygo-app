@@ -3,14 +3,13 @@ import NavBar from "../../Composants/NavBar/NavBar";
 import style from "./Home.module.css";
 import SearchBar from "../../Composants/SearchBar/SearchBar.js";
 import CardWrapper from "../../Composants/CardWrapper/CardWrapper.js";
+import InformationCard from "../../Composants/InformationCard/InformationCard";
 import CityCard from "../../Composants/CityCard/CityCard";
 import { useState } from "react";
 
-
-
 export default function Home() {
-  const [searchValue, setSearchValue] = useState("FR");
-  
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <>
       <div className={style.homeSection}>
@@ -25,8 +24,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div>
+        <div className={style.suggestionSection}>
           <CityCard searchCountryName={searchValue} />
+        </div>
+        <div className={style.informationSection}>
+          <InformationCard />
         </div>
       </div>
     </>
