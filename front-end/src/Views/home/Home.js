@@ -1,8 +1,8 @@
 import React from "react";
 import NavBar from "../../Composants/NavBar/NavBar";
 import style from "./Home.module.css";
-import SearchBar from "../../Composants/SearchBar/SearchBar.js";
-import CardWrapper from "../../Composants/CardWrapper/CardWrapper.js";
+import SearchBar from "../../Composants/SearchBar/SearchBar";
+import CardWrapper from "../../Composants/CardWrapper/CardWrapper";
 import InformationCard from "../../Composants/InformationCard/InformationCard";
 import CityCard from "../../Composants/CityCard/CityCard";
 import { useState } from "react";

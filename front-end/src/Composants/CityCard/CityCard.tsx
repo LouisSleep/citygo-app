@@ -1,30 +1,41 @@
-import React from "react";
-import style from "./CityCard.module.css";
-import CardWrapper from "../CardWrapper/CardWrapper";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import img from "../../Assets/img/travelinfo.png";
-// import UnsplashImg from "../../Services/UnsplashImg";
+import React from "react"
+import style from "./CityCard.module.css"
+import CardWrapper from "../CardWrapper/CardWrapper"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import img from "../../Assets/img/travelinfo.png"
+// import UnsplashImg from "../../Services/UnsplashImg"
 
-export default function CityCard(props) {
-  // const cities = require("cities.json");
-  // const countryName = require("../../Services/data.json");
+interface PropsType {
+  searchCountryName: string
+}
 
-  const [city, setCity] = useState([]);
-  const navigate = useNavigate();
+interface CardType {
+  id: number
+  country: string
+  cityName: string
+  image: string
+}
+
+export default function CityCard(props: PropsType) {
+  // const cities = require("cities.json")
+  // const countryName = require("../../Services/data.json")
+
+  const [city, setCity] = useState([])
+  const navigate = useNavigate()
 
   const fetchData = () => {
     return fetch("http://127.0.0.1:8000/api/city")
       .then((response) => response.json())
-      .then((data) => setCity(data));
-  };
+      .then((data) => setCity(data))
+  }
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
-  const titleOfIdeasSection = "Some Ideas";
-  const titleOfSuggestionSection = "Our Suggestions";
+  const titleOfIdeasSection = "Some Ideas"
+  const titleOfSuggestionSection = "Our Suggestions"
 
   return (
     <div className={style.suggestionSection}>
@@ -40,15 +51,15 @@ export default function CityCard(props) {
           ? city
               .slice(0, 17)
               .filter(
-                ({ country, cityName }) =>
+                ({ country, cityName }: CardType) =>
                   country.includes(props.searchCountryName) ||
                   cityName.includes(props.searchCountryName)
               )
 
-              .map(({ id, country, cityName, image }) => {
+              .map(({ id, country, cityName, image }: CardType) => {
                 return (
                   <div className={style.cityCard} key={id}>
-                    <button className={style.suggestCard} onChange>
+                    <button className={style.suggestCard}>
                       <CardWrapper>
                         <div
                           className={style.cityCardContent}
@@ -70,17 +81,17 @@ export default function CityCard(props) {
                       </CardWrapper>
                     </button>
                   </div>
-                );
+                )
               })
           : city
               .slice(0, 8)
               .filter(
-                ({ country, cityName }) =>
+                ({ country, cityName }: CardType) =>
                   country.includes(props.searchCountryName) ||
                   cityName.includes(props.searchCountryName)
               )
 
-              .map(({ id, country, cityName, image }) => {
+              .map(({ id, country, cityName, image }: CardType) => {
                 return (
                   <div className={style.cityCard} key={id}>
                     <button
@@ -100,7 +111,7 @@ export default function CityCard(props) {
                       </CardWrapper>
                     </button>
                   </div>
-                );
+                )
               })}
       </div>
       <div className={style.CTAButton}>
@@ -111,5 +122,5 @@ export default function CityCard(props) {
         )}
       </div>
     </div>
-  );
+  )
 }
