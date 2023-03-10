@@ -22,24 +22,30 @@ export default function SignUpCard() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    await fetch("http://localhost:8000/api/user/register", {
+    await fetch("http://127.0.0.1:8000/api/user/register", {
       method: "POST",
+      mode: "cors",
+      headers: new Headers({
+        Accept: "application/json",
+        "Content-type": "application/json; charset=UTF-8",
+      }),
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
         email: mail,
         password: password,
       }),
-      headers: { "Content-Type": "application/json; charset=UTF-8" },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        //first consume it in console.log
+        response.json(); //then consume it again, the error happens
+      })
       .then((data) => {
         localStorage.setItem("user", JSON.stringify(data));
         navigate("/Login");
       })
-      // let resJson = await res.json();
       .catch((err) => {
-        console.log(err.message);
+        console.error("Error:", err);
       });
   };
 

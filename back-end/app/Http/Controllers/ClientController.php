@@ -16,10 +16,10 @@ class ClientController extends Controller
     
     function register(Request $request){
         $data = $request->validate([
-            'firstName' => 'required|max:255',
-            'lastName' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|confirmed',
+            "firstName" => ["required", "string"],
+            "lastName" => ["required", "string"],
+            "email" => ["required", "email", "unique:clients,email"],
+            "password" => ["required", "string"],
 
         ]);
 
