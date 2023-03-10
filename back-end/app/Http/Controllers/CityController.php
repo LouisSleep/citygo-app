@@ -12,9 +12,10 @@ class CityController extends Controller
     {
         $cities = City::all();
 
-        // On retourne les informations des utilisateurs en JSON
+        // On retourne les informations des villes en JSON
         return response()->json($cities);
     }
+    
 
    
 

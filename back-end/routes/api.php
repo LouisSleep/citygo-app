@@ -14,12 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
-
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CityController;
 
+// City 
 Route::apiResource("city", CityController::class);
+
+
+// User
+Route::post("/user/register", [ClientController::class, "register"]);
+Route::get("/user/alluser",[ClientController::class,"user"]);
+

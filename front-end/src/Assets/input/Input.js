@@ -9,6 +9,7 @@ export default function Input(props) {
         type={props.type}
         placeholder={props.placeHolder}
         onChange={props.onChangeFunction}
+        name={props.name}
       ></input>
     </>
   );

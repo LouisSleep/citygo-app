@@ -1,9 +1,12 @@
-import React from 'react'
-import SignUpCard from '../../../Composants/Auth/SignUp/SignUpCard'
+import React from "react";
+import style from "./SignUp.module.css";
+import SignUpCard from "../../../Composants/Auth/SignUp/SignUpCard";
 export default function SignUp() {
   return (
     <>
-    <SignUpCard/>
+      <div className={style.SignUpPage}>
+        <SignUpCard />
+      </div>
     </>
-  )
+  );
 }
