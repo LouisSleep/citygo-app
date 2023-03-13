@@ -6,24 +6,27 @@ import City from "../../Views/city/City";
 import SignUp from "../../Views/auth/signup/SignUp";
 import Login from "../../Views/auth/login/Login";
 import logo from "../../Assets/svg/logo/logo.svg";
+import ConnectedUser from "./ConnectedUser/ConnectedUser";
+import UnConnectedUser from "./UnConnectedUser/UnConnectedUser";
 
 export default function NavBar() {
   const navigate = useNavigate();
+
+  const UserState = () => {
+    if (localStorage.getItem("user") === undefined || localStorage.getItem("user") === null ) {
+      return <UnConnectedUser />;
+    } else {
+      return <ConnectedUser />;
+    }
+  };
 
   return (
     <header className={style.headerNav}>
       <button className={style.headerButton} onClick={() => navigate("/")}>
         <img className={style.logoHeader} src={logo}></img>
-        <h1 className={style.titleHeader} >City Go</h1>
+        <h1 className={style.titleHeader}>City Go</h1>
       </button>
-      <nav className={style.navbarSection}>
-        <button className={style.navButton} onClick={() => navigate("/Login")}>
-          Login
-        </button>
-        <button className={style.navButton} onClick={() => navigate("/SignUp")}>
-          Sign Up
-        </button>
-      </nav>
+      {UserState()}
     </header>
   );
 }

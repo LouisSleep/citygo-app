@@ -32,5 +32,9 @@
 }
 
 .informationSection {
-  margin: 8% 0 4% 0;
+  margin: 0 0 4% 0;
+}
+
+.userValue {
+  font-weight: var(--font-weight-normal);
 }

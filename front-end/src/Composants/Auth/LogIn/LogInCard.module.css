@@ -1,0 +1,78 @@
+.LogInModule {
+  width: 40em;
+}
+.CardLogIn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.CardLogIn h2 {
+  margin: 4%;
+}
+/* .FormSignUp {
+  } */
+
+.LabelInput {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 4%;
+  color: var(--color-blue-primary);
+  font-weight: 600;
+}
+
+.UserNameInput,
+.PasswordInput {
+  border: none;
+  height: 2em;
+  width: auto;
+  background-color: var(--color-grey-background);
+  padding: 0.5em;
+  font-size: var(--font-size-xss);
+  border-radius: 10px;
+  margin: var(--space-8) var(--space-4) 0 0;
+  outline: none;
+}
+
+.CTALog {
+  display: flex;
+  flex-direction: column;
+}
+
+.SignupButton {
+  border: none;
+  background-color: var(--color-blue-secondary);
+  color: var(--color-ink-white);
+  font-size: var(--font-size-xss);
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.SignupButton:hover {
+  background-color: transparent;
+  border: solid 2px var(--color-blue-secondary);
+  color: var(--color-blue-secondary);
+  /* transition: 0.8s; */
+}
+
+.LoginButton {
+  border: none;
+  background-color: transparent;
+  font-size: var(--font-size-xss);
+  color: var(--color-blue-primary);
+  cursor: pointer;
+}
+
+.LoginButton:hover {
+  text-decoration: underline;
+}
+
+.SignupButton,
+.LoginButton {
+  margin: 1% 4% 1% 4%;
+  height: 2.5em;
+  padding: 0.5em;
+}

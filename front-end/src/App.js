@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Views/home/Home.js";
 import City from "./Views/city/City.js";
 import NavBar from "./Composants/NavBar/NavBar.js";
+import Footer from "./Composants/Footer/Footer";
 import Login from "./Views/auth/login/Login.js";
 import SignUp from "./Views/auth/signup/SignUp.js";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/SignUp" element={<SignUp />} />
           </Routes>
         </div>
+        <Footer />
       </section>
     </div>
   );

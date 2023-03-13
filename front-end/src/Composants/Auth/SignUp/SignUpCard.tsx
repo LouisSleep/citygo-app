@@ -36,11 +36,9 @@ export default function SignUpCard() {
         password: password,
       }),
     })
-      .then((response) => {
-        //first consume it in console.log
-        response.json(); //then consume it again, the error happens
-      })
+      .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         localStorage.setItem("user", JSON.stringify(data));
         navigate("/Login");
       })
@@ -49,10 +47,10 @@ export default function SignUpCard() {
       });
   };
 
-  console.log(firstName);
-  console.log(lastName);
-  console.log(mail);
-  console.log(password);
+  // console.log(firstName);
+  // console.log(lastName);
+  // console.log(mail);
+  // console.log(password);
   return (
     <div className={style.SignUpModule}>
       <CardWrapper>

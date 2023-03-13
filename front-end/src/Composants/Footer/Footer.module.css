@@ -1,0 +1,5 @@
+.footerModule {
+  padding: var(--padding-space-2);
+  font-family: var(--font-family-logo);
+  color: var(--color-grey-primary);
+}
