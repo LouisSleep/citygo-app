@@ -34,8 +34,8 @@ export default function CityCard(props: PropsType) {
     fetchData()
   }, [])
 
-  const titleOfIdeasSection = "Some Ideas"
-  const titleOfSuggestionSection = "Our Suggestions"
+  const titleOfIdeasSection = "SOME IDEAS"
+  const titleOfSuggestionSection = "OUR SUGGESTIONS"
 
   return (
     <div className={style.suggestionSection}>

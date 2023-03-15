@@ -26,7 +26,7 @@ export default function Home() {
           <div className={style.titleSection}>
             <p className={style.h1Home}> Travel wherever you want...</p>
             <p className={style.h5Home}>
-              Choose your way <span className={style.userValue}>{userValue}</span>
+              Find your way <span className={style.userValue}>{userValue}</span>
             </p>
             <div className={style.searchSection}>
               <SearchBar

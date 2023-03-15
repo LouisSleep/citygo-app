@@ -1,14 +1,15 @@
 import React from "react";
 import InformationCardWrapper from "../InformationCardWrapper/InformationCardWrapper";
 import style from "./InformationCard.module.css";
-import image from "../../Assets/img/travelinfo.png"
+import image from "../../Assets/img/travelinfo.png";
 import { useNavigate } from "react-router-dom";
 // import travelimage from "../../Assets/img/travelinfo.png";
 
 export default function InformationCard() {
   return (
     <>
-      <h1>INFORMATIONS</h1>
+      <h1 className={style.informationTitle}>INFORMATIONS</h1>
+
       <h4>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras magna
         justo, tempor vitae hendrerit id, lobortis id lectus. Maecenas eleifend
@@ -35,9 +36,7 @@ export default function InformationCard() {
               <button>See</button>
             </div>
             <div className={style.imageCardContent}>
-              <img className={style.img} src={image}>
-              
-              </img>
+              <img className={style.img} src={image}></img>
             </div>
           </div>
           <div className={style.cardSection}>

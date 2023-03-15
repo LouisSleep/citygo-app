@@ -27,6 +27,7 @@
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-thin);
 }
+
 .suggestionSection {
   margin: 0 0 4% 0;
 }

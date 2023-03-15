@@ -40,7 +40,7 @@ export default function LogInCard() {
     <div className={style.LogInModule}>
       <CardWrapper>
         <div className={style.CardLogIn}>
-          <h2>Log In</h2>
+          <h2>LOG IN</h2>
           <form
             method="POST"
             // onSubmit={handleSubmit}
