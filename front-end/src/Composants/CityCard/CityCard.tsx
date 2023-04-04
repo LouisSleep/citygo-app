@@ -1,41 +1,40 @@
-import React from "react"
-import style from "./CityCard.module.css"
-import CardWrapper from "../CardWrapper/CardWrapper"
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import img from "../../Assets/img/travelinfo.png"
-// import UnsplashImg from "../../Services/UnsplashImg"
+import React from "react";
+import style from "./CityCard.module.css";
+import CardWrapper from "../CardWrapper/CardWrapper";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import img from "../../Assets/img/travelinfo.png";
 
 interface PropsType {
-  searchCountryName: string
+  searchCountryName: string;
 }
 
 interface CardType {
-  id: number
-  country: string
-  cityName: string
-  image: string
+  id: number;
+  country: string;
+  cityName: string;
+  image: string;
 }
 
 export default function CityCard(props: PropsType) {
   // const cities = require("cities.json")
   // const countryName = require("../../Services/data.json")
 
-  const [city, setCity] = useState([])
-  const navigate = useNavigate()
+  const [city, setCity] = useState([]);
+  const navigate = useNavigate();
 
   const fetchData = () => {
     return fetch("http://127.0.0.1:8000/api/city")
       .then((response) => response.json())
-      .then((data) => setCity(data))
-  }
+      .then((data) => setCity(data));
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
-  const titleOfIdeasSection = "SOME IDEAS"
-  const titleOfSuggestionSection = "OUR SUGGESTIONS"
+  const titleOfIdeasSection = "SOME IDEAS";
+  const titleOfSuggestionSection = "OUR SUGGESTIONS";
 
   return (
     <div className={style.suggestionSection}>
@@ -58,7 +57,7 @@ export default function CityCard(props: PropsType) {
 
               .map(({ id, country, cityName, image }: CardType) => {
                 return (
-                  <div className={style.cityCard} key={id}>
+                  <div className={style.cityCard} id={style.id} key={id}>
                     <button className={style.suggestCard}>
                       <CardWrapper>
                         <div
@@ -74,14 +73,20 @@ export default function CityCard(props: PropsType) {
                             )
                           }
                         >
-                          <p>{country}</p>
-                          <p>{cityName}</p>
-                          <img src={img}></img>
+                          <p id={style.country}>{country}</p>
+                          <p id={style.cityName}>{cityName}</p>
+                          <img
+                            id={style.cityImg}
+                            src={
+                              "https://source.unsplash.com/1980x1080/?" +
+                              country
+                            }
+                          ></img>
                         </div>
                       </CardWrapper>
                     </button>
                   </div>
-                )
+                );
               })
           : city
               .slice(0, 8)
@@ -93,7 +98,11 @@ export default function CityCard(props: PropsType) {
 
               .map(({ id, country, cityName, image }: CardType) => {
                 return (
-                  <div className={style.cityCard} key={id}>
+                  <div
+                    className={style.cityCard}
+                    id={"0_" + id + "_city_country"}
+                    key={id}
+                  >
                     <button
                       className={style.suggestCard}
                       onClick={() =>
@@ -104,23 +113,39 @@ export default function CityCard(props: PropsType) {
                     >
                       <CardWrapper>
                         <div className={style.cityCardContent}>
-                          <p>{country}</p>
-                          <p>{cityName}</p>
-                          <img src={img}></img>
+                          <p id={style.cityName}> {cityName}</p>
+                          <p id={style.country}>{country}</p>
+                          <img
+                            id={style.cityImg}
+                            src={
+                              "https://source.unsplash.com/1980x1080/?" +
+                              country
+                            }
+                          ></img>
                         </div>
                       </CardWrapper>
                     </button>
                   </div>
-                )
+                );
               })}
       </div>
       <div className={style.CTAButton}>
         {props.searchCountryName ? (
-          <button className={style.CTAButtonSeeAllCity}>SHOW MORE</button>
+          <button
+            className={style.CTAButtonSeeAllCity}
+            onClick={() => navigate("/CitySuggest?show-more")}
+          >
+            SHOW MORE
+          </button>
         ) : (
-          <button className={style.CTAButtonSeeAllCity}>SEE ALL</button>
+          <button
+            className={style.CTAButtonSeeAllCity}
+            onClick={() => navigate("/CitySuggest?all-destination")}
+          >
+            SEE ALL
+          </button>
         )}
       </div>
     </div>
-  )
+  );
 }

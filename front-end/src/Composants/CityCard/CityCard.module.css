@@ -31,6 +31,19 @@
   border-radius: 12px;
 }
 
+.cityCardContent #country {
+  color: var(--color-blue-tertiary);
+  font-size: var(--font-size-xxs);
+  font-weight: var(--font-weight-extra-light);
+  margin: 2%;
+}
+
+.cityCardContent #cityName {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+  margin: 2%;
+}
+
 .suggestCard {
   border: none;
   background-color: transparent;
@@ -40,7 +53,7 @@
   cursor: pointer;
 }
 
-.CTAButton{
+.CTAButton {
   display: flex;
   justify-content: center;
 }
