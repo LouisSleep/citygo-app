@@ -15,6 +15,10 @@
 .titleHeader {
   margin: 1%;
 }
+.headerTitleName {
+  white-space: nowrap;
+}
+
 .headerButton {
   display: flex;
   justify-content: start;

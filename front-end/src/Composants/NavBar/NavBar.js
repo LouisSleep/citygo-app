@@ -13,7 +13,10 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   const UserState = () => {
-    if (localStorage.getItem("user") === undefined || localStorage.getItem("user") === null ) {
+    if (
+      localStorage.getItem("user") === undefined ||
+      localStorage.getItem("user") === null
+    ) {
       return <UnConnectedUser />;
     } else {
       return <ConnectedUser />;
@@ -22,10 +25,12 @@ export default function NavBar() {
 
   return (
     <header className={style.headerNav}>
-      <button className={style.headerButton} onClick={() => navigate("/")}>
-        <img className={style.logoHeader} src={logo}></img>
-        <h1 className={style.titleHeader}>City Go</h1>
-      </button>
+      <div className={style.headerTitleName}>
+        <button className={style.headerButton} onClick={() => navigate("/")}>
+          <img className={style.logoHeader} src={logo}></img>
+          <h1 className={style.titleHeader}>City Go</h1>
+        </button>
+      </div>
       {UserState()}
     </header>
   );

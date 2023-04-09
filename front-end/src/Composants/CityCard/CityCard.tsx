@@ -73,8 +73,6 @@ export default function CityCard(props: PropsType) {
                             )
                           }
                         >
-                          <p id={style.country}>{country}</p>
-                          <p id={style.cityName}>{cityName}</p>
                           <img
                             id={style.cityImg}
                             src={
@@ -82,6 +80,10 @@ export default function CityCard(props: PropsType) {
                               country
                             }
                           ></img>
+                          <p id={style.cityName}>
+                            {" "}
+                            {cityName}, {country}
+                          </p>
                         </div>
                       </CardWrapper>
                     </button>
@@ -89,7 +91,7 @@ export default function CityCard(props: PropsType) {
                 );
               })
           : city
-              .slice(0, 8)
+              .slice(0, 6)
               .filter(
                 ({ country, cityName }: CardType) =>
                   country.includes(props.searchCountryName) ||
@@ -113,8 +115,6 @@ export default function CityCard(props: PropsType) {
                     >
                       <CardWrapper>
                         <div className={style.cityCardContent}>
-                          <p id={style.cityName}> {cityName}</p>
-                          <p id={style.country}>{country}</p>
                           <img
                             id={style.cityImg}
                             src={
@@ -122,6 +122,11 @@ export default function CityCard(props: PropsType) {
                               country
                             }
                           ></img>
+                          <p id={style.cityName}>
+                            {" "}
+                            {cityName}, {country}
+                          </p>
+                          {/* <p id={style.country}>{country}</p> */}
                         </div>
                       </CardWrapper>
                     </button>
