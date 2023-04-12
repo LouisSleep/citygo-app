@@ -1,10 +1,36 @@
 h1,
 h4 {
-  text-align: center;
+  text-align: left;
 }
 
-h4 {
-  font-weight: 400;
+.spanCorpName {
+  color: var(--color-blue-secondary);
+  animation: move 3.5s ease-in infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(-30%, 0);
+  }
+  50% {
+    text-shadow: 0 25px 25px rgba(88, 88, 88, 0.59);
+  }
+  100% {
+    transform: translate(30%, 0);
+  }
+}
+
+/* h4 {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xxl);
+} */
+.titleInformation {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xxl);
+}
+
+.cardH4 {
+  font-size: var(--font-size-m);
 }
 
 .informationCardSection {
@@ -14,7 +40,7 @@ h4 {
 }
 .cardSection {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1.5fr;
   transition: 0.3s;
   margin: 6%;
   border-radius: 12px;

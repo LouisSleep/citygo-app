@@ -9,17 +9,5 @@
   background-color: var(--color-grey-background);
   border-radius: 28px;
 }
-.headForm {
-  /* margin: var(--space-16) var(--space-16) var(--space-4) 0; */
-}
-.validateButton {
-  margin: 0 var(--space-4) 0 0;
-  border: none;
-  border-radius: 8px;
-  padding: 1%;
-  color: var(--color-ink-white);
-  font-weight: var(--font-weight-semi-bold);
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-}
+
+

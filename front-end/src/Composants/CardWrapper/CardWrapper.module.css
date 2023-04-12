@@ -6,6 +6,6 @@
 }
 
 .cardWrapper:hover {
-  text-decoration: underline;
+  box-shadow: 4px 4px 20px var(--color-black-background);
   transition: 0.6s;
 }

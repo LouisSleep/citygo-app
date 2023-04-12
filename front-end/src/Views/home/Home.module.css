@@ -16,16 +16,18 @@
 .titleSection {
   background-color: var(--color-white-background);
   border-radius: 28px;
-  padding: 2%;
+  padding: 4% 2% 4% 2%;
 }
 .titleSection .h1Home {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semi-bold);
   color: var(--color-blue-primary);
+  margin: 0 0 0 0;
 }
 .titleSection .h5Home {
   font-size: var(--font-size-m);
   font-weight: var(--font-weight-thin);
+  margin: 5% 0 2.5% 0;
 }
 
 .suggestionSection {

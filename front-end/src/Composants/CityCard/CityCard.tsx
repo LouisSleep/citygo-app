@@ -33,8 +33,8 @@ export default function CityCard(props: PropsType) {
     fetchData();
   }, []);
 
-  const titleOfIdeasSection = "SOME IDEAS";
-  const titleOfSuggestionSection = "OUR SUGGESTIONS";
+  const titleOfIdeasSection = "Some ideas";
+  const titleOfSuggestionSection = "Your research";
 
   return (
     <div className={style.suggestionSection}>
@@ -59,33 +59,30 @@ export default function CityCard(props: PropsType) {
                 return (
                   <div className={style.cityCard} id={style.id} key={id}>
                     <button className={style.suggestCard}>
-                      <CardWrapper>
-                        <div
-                          className={style.cityCardContent}
-                          onClick={() =>
-                            navigate(
-                              "/CitySuggest?" +
-                                id +
-                                "&" +
-                                country +
-                                "&" +
-                                cityName
-                            )
+                      <div
+                        className={style.cityCardContent}
+                        onClick={() =>
+                          navigate(
+                            "/CitySuggest?" +
+                              id +
+                              "&" +
+                              country +
+                              "&" +
+                              cityName
+                          )
+                        }
+                      >
+                        <img
+                          id={style.cityImg}
+                          src={
+                            "https://source.unsplash.com/1980x1080/?" + country
                           }
-                        >
-                          <img
-                            id={style.cityImg}
-                            src={
-                              "https://source.unsplash.com/1980x1080/?" +
-                              country
-                            }
-                          ></img>
-                          <p id={style.cityName}>
-                            {" "}
-                            {cityName}, {country}
-                          </p>
-                        </div>
-                      </CardWrapper>
+                        ></img>
+                        <p id={style.cityName}>
+                          {" "}
+                          {cityName}, {country}
+                        </p>
+                      </div>
                     </button>
                   </div>
                 );
@@ -113,22 +110,19 @@ export default function CityCard(props: PropsType) {
                         )
                       }
                     >
-                      <CardWrapper>
-                        <div className={style.cityCardContent}>
-                          <img
-                            id={style.cityImg}
-                            src={
-                              "https://source.unsplash.com/1980x1080/?" +
-                              country
-                            }
-                          ></img>
-                          <p id={style.cityName}>
-                            {" "}
-                            {cityName}, {country}
-                          </p>
-                          {/* <p id={style.country}>{country}</p> */}
-                        </div>
-                      </CardWrapper>
+                      <div className={style.cityCardContent}>
+                        <img
+                          id={style.cityImg}
+                          src={
+                            "https://source.unsplash.com/1980x1080/?" + country
+                          }
+                        ></img>
+                        <p id={style.cityName}>
+                          {" "}
+                          {cityName}, {country}
+                        </p>
+                        {/* <p id={style.country}>{country}</p> */}
+                      </div>
                     </button>
                   </div>
                 );
@@ -138,16 +132,18 @@ export default function CityCard(props: PropsType) {
         {props.searchCountryName ? (
           <button
             className={style.CTAButtonSeeAllCity}
-            onClick={() => navigate("/CitySuggest?show-more")}
+            onClick={() =>
+              navigate("/CitySuggest?show-more" + props.searchCountryName)
+            }
           >
-            SHOW MORE
+            Show more
           </button>
         ) : (
           <button
             className={style.CTAButtonSeeAllCity}
-            onClick={() => navigate("/CitySuggest?all-destination")}
+            onClick={() => navigate("/CitySuggest?all-destination&")}
           >
-            SEE ALL
+            See all
           </button>
         )}
       </div>
