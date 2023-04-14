@@ -63,11 +63,11 @@ export default function CityCard(props: PropsType) {
                         className={style.cityCardContent}
                         onClick={() =>
                           navigate(
-                            "/CitySuggest?" +
+                            "/City?id=" +
                               id +
-                              "&" +
+                              "&country=" +
                               country +
-                              "&" +
+                              "&city=" +
                               cityName
                           )
                         }
@@ -106,7 +106,12 @@ export default function CityCard(props: PropsType) {
                       className={style.suggestCard}
                       onClick={() =>
                         navigate(
-                          "/CitySuggest?" + id + "&" + country + "&" + cityName
+                          "/City?id=" +
+                            id +
+                            "&country=" +
+                            country +
+                            "&city=" +
+                            cityName
                         )
                       }
                     >

@@ -9,9 +9,9 @@
 
 .CardSignUp h2 {
   margin: 4%;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-ink-vantablack);
 }
-/* .FormSignUp {
-} */
 
 .LabelInput {
   display: flex;
@@ -19,7 +19,7 @@
   flex-direction: column;
   margin: 4%;
   color: var(--color-blue-primary);
-  font-weight: 600;
+  font-weight: var(--font-weight-semi-bold);
 }
 
 .FirstNameInput,

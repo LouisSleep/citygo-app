@@ -47,10 +47,6 @@ export default function SignUpCard() {
       });
   };
 
-  // console.log(firstName);
-  // console.log(lastName);
-  // console.log(mail);
-  // console.log(password);
   return (
     <div className={style.SignUpModule}>
       <CardWrapper>
