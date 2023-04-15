@@ -57,7 +57,11 @@ export default function CityCard(props: PropsType) {
 
               .map(({ id, country, cityName, image }: CardType) => {
                 return (
-                  <div className={style.cityCard} id={style.id} key={id}>
+                  <div
+                    className={style.cityCard}
+                    id={"0_" + id + "_city_country"}
+                    key={id}
+                  >
                     <button className={style.suggestCard}>
                       <div
                         className={style.cityCardContent}
