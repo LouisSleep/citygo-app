@@ -1,8 +1,13 @@
 .cityDescriptionComponent {
-  margin: 2%;
+  margin: 0 0 0 2%;
 }
 
 .title {
-  font-size: var(--font-size-l);
+  margin: 0;
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+}
+
+.title p {
+  margin: 0;
 }

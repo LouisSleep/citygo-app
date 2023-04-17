@@ -1,4 +1,17 @@
 .CityHeader {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: 0 0 5% 0;
+}
+
+.CityImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CityText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

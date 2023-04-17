@@ -41,3 +41,7 @@
 .userValue {
   font-weight: var(--font-weight-normal);
 }
+
+.videoLayoutCityGo {
+  margin-top: var(--space-32);
+}

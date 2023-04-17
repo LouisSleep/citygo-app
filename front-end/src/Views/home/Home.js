@@ -5,6 +5,7 @@ import SearchBar from "../../Composants/SearchBar/SearchBar";
 import CardWrapper from "../../Composants/CardWrapper/CardWrapper";
 import InformationCard from "../../Composants/InformationCard/InformationCard";
 import CityCard from "../../Composants/CityCard/CityCard";
+import VideoLayout from "../../Composants/VideoLayout/VideoLayout.tsx";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -41,6 +42,9 @@ export default function Home() {
         </div>
         <div className={style.informationSection}>
           <InformationCard />
+        </div>
+        <div className={style.videoLayoutCityGo}>
+          <VideoLayout />
         </div>
       </div>
     </>

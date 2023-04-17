@@ -1,0 +1,9 @@
+.googleMapIframe {
+  width: auto;
+  margin: 0;
+}
+
+.iframe {
+  border-radius: 14px;
+  width: 100%;
+}
