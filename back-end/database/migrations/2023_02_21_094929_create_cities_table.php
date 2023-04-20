@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cities', function (Blueprint $table) {
-            $table->id();
-            $table->string('cityName');
-            $table->string('country');
-            $table->string('token', 64)->unique();
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->timestamp('last_update')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('cities', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('city');
+        //     $table->string('country');
+        //     $table->string('token', 64)->unique();
+        //     $table->text('description')->nullable();
+        //     $table->string('image')->nullable();
+        //     $table->timestamp('last_update')->nullable();
+        //     $table->timestamps();
+        // });
 
     }
 

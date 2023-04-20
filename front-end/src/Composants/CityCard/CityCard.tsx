@@ -11,8 +11,9 @@ interface PropsType {
 
 interface CardType {
   id: number;
-  country: string;
-  cityName: string;
+  country_name: string;
+  city_name: string;
+  state_name: string;
   image: string;
 }
 
@@ -21,10 +22,11 @@ export default function CityCard(props: PropsType) {
   // const countryName = require("../../Services/data.json")
 
   const [city, setCity] = useState([]);
+  const [cityRandomized, setCityNameRandomized] = useState([]);
   const navigate = useNavigate();
 
   const fetchData = () => {
-    return fetch("http://127.0.0.1:8000/api/city")
+    return fetch("http://127.0.0.1:8000/api/city/allcity")
       .then((response) => response.json())
       .then((data) => setCity(data));
   };
@@ -32,6 +34,24 @@ export default function CityCard(props: PropsType) {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const cityNameRandomized = () => {
+    let cityArray = [...city];
+    let currentIndex = cityArray.length,
+      randomIndex;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [cityArray[currentIndex], cityArray[randomIndex]] = [
+        cityArray[randomIndex],
+        cityArray[currentIndex],
+      ];
+    }
+
+    return cityArray;
+  };
 
   const titleOfIdeasSection = "Some ideas";
   const titleOfSuggestionSection = "Your research";
@@ -47,15 +67,15 @@ export default function CityCard(props: PropsType) {
       </div>
       <div className={style.cardSection}>
         {props.searchCountryName
-          ? city
+          ? cityNameRandomized()
               .slice(0, 17)
               .filter(
-                ({ country, cityName }: CardType) =>
-                  country.includes(props.searchCountryName) ||
-                  cityName.includes(props.searchCountryName)
+                ({ country_name, city_name }: CardType) =>
+                  country_name.includes(props.searchCountryName) ||
+                  city_name.includes(props.searchCountryName)
               )
 
-              .map(({ id, country, cityName, image }: CardType) => {
+              .map(({ id, country_name, city_name, image }: CardType) => {
                 return (
                   <div
                     className={style.cityCard}
@@ -70,36 +90,37 @@ export default function CityCard(props: PropsType) {
                             "/City?id=" +
                               id +
                               "&country=" +
-                              country +
+                              country_name +
                               "&city=" +
-                              cityName
+                              city_name
                           )
                         }
                       >
                         <img
                           id={style.cityImg}
                           src={
-                            "https://source.unsplash.com/1980x1080/?" + country
+                            "https://source.unsplash.com/1980x1080/?" +
+                            city_name
                           }
                         ></img>
                         <p id={style.cityName}>
                           {" "}
-                          {cityName}, {country}
+                          {city_name}, {country_name}
                         </p>
                       </div>
                     </button>
                   </div>
                 );
               })
-          : city
+          : cityNameRandomized()
               .slice(0, 6)
               .filter(
-                ({ country, cityName }: CardType) =>
-                  country.includes(props.searchCountryName) ||
-                  cityName.includes(props.searchCountryName)
+                ({ country_name, city_name }: CardType) =>
+                  country_name.includes(props.searchCountryName) ||
+                  city_name.includes(props.searchCountryName)
               )
 
-              .map(({ id, country, cityName, image }: CardType) => {
+              .map(({ id, country_name, city_name, image }: CardType) => {
                 return (
                   <div
                     className={style.cityCard}
@@ -113,9 +134,9 @@ export default function CityCard(props: PropsType) {
                           "/City?id=" +
                             id +
                             "&country=" +
-                            country +
+                            country_name +
                             "&city=" +
-                            cityName
+                            city_name
                         )
                       }
                     >
@@ -123,14 +144,14 @@ export default function CityCard(props: PropsType) {
                         <img
                           id={style.cityImg}
                           src={
-                            "https://source.unsplash.com/1980x1080/?" + country
+                            "https://source.unsplash.com/1980x1080/?" +
+                            city_name
                           }
                         ></img>
                         <p id={style.cityName}>
                           {" "}
-                          {cityName}, {country}
+                          {city_name}, {country_name}
                         </p>
-                        {/* <p id={style.country}>{country}</p> */}
                       </div>
                     </button>
                   </div>

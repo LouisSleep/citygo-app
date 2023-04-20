@@ -22,9 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-// City 
-Route::apiResource("city", CityController::class);
-
+// City
+Route::get("/city/allcity",[CityController::class,"index"]);
+// Route::apiResource("city", CityController::class);
 
 // User
 Route::post("/user/register", [ClientController::class, "register"]);

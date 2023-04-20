@@ -17,10 +17,10 @@ export default function City() {
       <div className={style.googleMapStatic}>
         <CityDescriptionMap
           apiKey={apiKeyGoogle_CityDescriptionMap}
+          city={cityParams}
           country={countryParams}
         />
       </div>
-      
     </div>
   );
 }

@@ -32,6 +32,8 @@ export default function CityDescriptionMap(props) {
           "https://www.google.com/maps/embed/v1/place?key=" +
           props.apiKey +
           "&q=" +
+          props.city +
+          "," +
           props.country
         }
         url=""
