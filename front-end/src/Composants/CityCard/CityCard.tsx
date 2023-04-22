@@ -3,6 +3,8 @@ import style from "./CityCard.module.css";
 import CardWrapper from "../CardWrapper/CardWrapper";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+// @ts-ignore
+import CityNameRandomized from "../../Utils/CityNameRandomized/CityNameRandomized.tsx";
 import img from "../../Assets/img/travelinfo.png";
 
 interface PropsType {
@@ -35,24 +37,6 @@ export default function CityCard(props: PropsType) {
     fetchData();
   }, []);
 
-  const cityNameRandomized = () => {
-    let cityArray = [...city];
-    let currentIndex = cityArray.length,
-      randomIndex;
-
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-
-      [cityArray[currentIndex], cityArray[randomIndex]] = [
-        cityArray[randomIndex],
-        cityArray[currentIndex],
-      ];
-    }
-
-    return cityArray;
-  };
-
   const titleOfIdeasSection = "Some ideas";
   const titleOfSuggestionSection = "Your research";
 
@@ -67,7 +51,7 @@ export default function CityCard(props: PropsType) {
       </div>
       <div className={style.cardSection}>
         {props.searchCountryName
-          ? cityNameRandomized()
+          ? CityNameRandomized({ city: city })
               .slice(0, 17)
               .filter(
                 ({ country_name, city_name }: CardType) =>
@@ -112,7 +96,7 @@ export default function CityCard(props: PropsType) {
                   </div>
                 );
               })
-          : cityNameRandomized()
+          : CityNameRandomized({ city: city })
               .slice(0, 6)
               .filter(
                 ({ country_name, city_name }: CardType) =>
